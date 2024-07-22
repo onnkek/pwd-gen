@@ -1,0 +1,66 @@
+.toggleContainer
+  --toggle-button-fg_disabled: var(--bg-disabled_subtle)
+  display: flex
+  color: var(--indigo-50)
+  align-items: center
+  width: 36px
+  height: 20px
+  background-color: var(--bg-tertiary)
+  outline: none
+  border: none
+  border-radius: var(--radius-full)
+  cursor: pointer
+.toggle
+  display: block
+  width: 16px
+  height: 16px
+  border-radius: var(--radius-full)
+  background-color: var(--fg-white)
+  transition: transform 0.2s ease-in-out
+  box-shadow: var(--shadow-sm)
+.disabled
+  cursor: default
+  .toggle
+    color: var(--toggle-button-fg_disabled)
+
+.toggleContainer[aria-checked="true"].disabled
+  background-color: var(--bg-disabled)
+
+.toggleContainer[aria-checked="true"]
+  animation: color 0.2s ease-in-out
+  background-color: var(--bg-brand-solid)
+  .toggle
+    transform: translateX(12px)
+  &:focus-visible
+    box-shadow: var(--ring-brand)
+.toggleContainer[aria-checked="false"]
+  animation: colorBack 0.2s ease-in-out
+  background-color: var(--bg-tertiary)
+  .toggle
+    transform: translateX(-3.5px)
+  &:focus-visible
+    box-shadow: var(--ring-gray-secondary)
+
+@keyframes color
+  from
+    background-color: var(--bg-tertiary)
+  to
+    background-color: var(--bg-brand-solid)
+
+@keyframes colorBack
+  from
+    background-color: var(--bg-brand-solid)
+  to
+    background-color: var(--bg-tertiary)
+
+.toggleContainer.l
+  width: 44px
+  height: 24px
+
+  .toggle
+    width: 20px
+    height: 20px
+
+.toggleContainer[aria-checked="true"].l
+  .toggle
+    transform: translateX(16px)
