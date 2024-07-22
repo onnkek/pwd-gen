@@ -117,6 +117,7 @@ function App() {
 
   return (
     <div className={classNames('app', {}, [theme])}>
+      <div></div>
       <div className="theme-wrapper">
         <SunIcon width={25} height={25} fill="var(--fg-brand-primary)" />
         <Toggle className='toggleTheme' size='L' checked={theme === 'dark'} onClick={toggleTheme} />
