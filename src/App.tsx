@@ -165,9 +165,9 @@ function App() {
           {showTooltip && <div className="tooltip">Copied!</div>}
           <InputGroup className='input-group'>
             <Input placeholder='Password' value={pwd} />
-            <Button theme='outline' onClick={copyClick}>
+            <Button className='input-button' theme='outline' onClick={copyClick}>
               <CopyIcon />
-              Copy
+              <span className='input-button-text'>Copy</span>
             </Button>
           </InputGroup>
         </div>

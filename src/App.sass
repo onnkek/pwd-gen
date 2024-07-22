@@ -50,3 +50,33 @@
 
 .prop-wrapper
   width: 50%
+
+@media (max-width:1120px)
+  .wrapper
+    padding: 100px
+  .header
+    font: var(--display-sm-bold)
+@media (max-width: 800px)
+  .wrapper
+    padding: 20px 20px
+
+@media (max-width: 800px)
+  .wrapper
+    padding: 20px
+  .prop-wrapper
+    width: 70%
+
+@media (max-width: 450px)
+  .input-group
+    button
+      padding: 0px 5px 0px 10px
+  .input-button-text
+    display: none
+  .header
+    font: var(--display-xs-bold)
+  .prop-wrapper
+    width: 100%
+  .wrapper
+    padding: 20px
+  .input-wrapper
+    width: 100%

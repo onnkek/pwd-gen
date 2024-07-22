@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b9d28e8.css",
-    "main.js": "/static/js/main.735b2991.js",
-    "index.html": "/index.html",
-    "static/media/moon.svg": "/static/media/moon.79e6d0e1f64b217d4f13f13504d5225b.svg",
-    "static/media/sun.svg": "/static/media/sun.652b8c54bd79eb3d422525aeb69d5a31.svg",
-    "static/media/question.svg": "/static/media/question.57eb7ed88aa9ad19a51eaf4da29697f0.svg",
-    "static/media/alert.svg": "/static/media/alert.967a601e843b9f5dd6a8abbf3e6c9b80.svg",
-    "static/media/copy.svg": "/static/media/copy.a4ca99098d91776956d0ecf3f0293f37.svg",
-    "main.9b9d28e8.css.map": "/static/css/main.9b9d28e8.css.map",
-    "main.735b2991.js.map": "/static/js/main.735b2991.js.map"
+    "main.css": "/pwd-gen/static/css/main.9b9d28e8.css",
+    "main.js": "/pwd-gen/static/js/main.da4e9865.js",
+    "index.html": "/pwd-gen/index.html",
+    "static/media/moon.svg": "/pwd-gen/static/media/moon.79e6d0e1f64b217d4f13f13504d5225b.svg",
+    "static/media/sun.svg": "/pwd-gen/static/media/sun.652b8c54bd79eb3d422525aeb69d5a31.svg",
+    "static/media/question.svg": "/pwd-gen/static/media/question.57eb7ed88aa9ad19a51eaf4da29697f0.svg",
+    "static/media/alert.svg": "/pwd-gen/static/media/alert.967a601e843b9f5dd6a8abbf3e6c9b80.svg",
+    "static/media/copy.svg": "/pwd-gen/static/media/copy.a4ca99098d91776956d0ecf3f0293f37.svg",
+    "main.9b9d28e8.css.map": "/pwd-gen/static/css/main.9b9d28e8.css.map",
+    "main.da4e9865.js.map": "/pwd-gen/static/js/main.da4e9865.js.map"
   },
   "entrypoints": [
     "static/css/main.9b9d28e8.css",
-    "static/js/main.735b2991.js"
+    "static/js/main.da4e9865.js"
   ]
 }
