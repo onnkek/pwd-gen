@@ -36,7 +36,7 @@ export const Input = ({ className, value, placeholder, Icon, disabled, descr, er
     <div className={classNames(cls.inputContainer, mods)}>
       {Icon && <Icon className={cls.icon} />}
       {area ?
-        <HTextarea cols={areaCols} rows={areaRows} disabled={disabled} className={classNames(cls.input, {}, [className])} placeholder={placeholder} name="description"></HTextarea>
+        <HTextarea value={value} cols={areaCols} rows={areaRows} disabled={disabled} className={classNames(cls.input, {}, [className])} placeholder={placeholder} name="description"></HTextarea>
         :
         <HInput value={value} ref={inputRef} {...otherProps} onChange={onChange} maxLength={maxLength} disabled={disabled} className={classNames(cls.input, {}, [className])} placeholder={placeholder} name="full_name" type="text" />
       }

@@ -7,26 +7,35 @@
 
   div:not(:first-child),
   input:not(:first-child),
+  textarea:not(:first-child),
   button:not(:first-child)
     --bs-border-width: 1px
     margin-left: calc(var(--bs-border-width)* -1)
   div,
   button
     &:first-child:not(:last-child),
-    *:first-child:not(:last-child) input
+    *:first-child:not(:last-child) input,
+    *:first-child:not(:last-child) textarea
       border-top-right-radius: 0
       border-bottom-right-radius: 0
   div,
   button
     &:last-child:not(:first-child),
-    *:last-child:not(:first-child) input
+    *:last-child:not(:first-child) input,
+    *:last-child:not(:first-child) textarea
       border-top-left-radius: 0
       border-bottom-left-radius: 0
   div,
   button
     &:not(:last-child):not(:first-child),
-    *:not(:last-child):not(:first-child) input
+    *:not(:last-child):not(:first-child) input,
+    *:not(:last-child):not(:first-child) textarea
       border-radius: 0
+
+.inputGroup
+  .input
+    button
+      height: auto
 
 .input
   margin-top: 6px

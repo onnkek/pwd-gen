@@ -22,6 +22,10 @@ function App() {
   const [length, setLength] = useState(20);
   const [showTooltip, setShowTooltip] = useState(false);
 
+  const [numberOfUids, setNumberOfUids] = useState(1);
+  const [uids, setUids] = useState('');
+  const [showTooltipUid, setShowTooltipUid] = useState(false);
+
   const getArrayCharacters = (low: number, high: number): string[] => {
     const result = new Array(high - low);
     for (let i = 0, l = low; i <= high - low; i++) {
@@ -88,6 +92,9 @@ function App() {
   const lengthChange = (value: number | number[]) => {
     setLength(value as number);
   }
+  const numberOfUidsChange = (value: number | number[]) => {
+    setNumberOfUids(value as number);
+  }
 
   const generateClick = () => {
     const props = {
@@ -113,7 +120,59 @@ function App() {
         console.log('Cant copy password', err);
       });
   }
+  const copyUIDClick = () => {
+    setShowTooltipUid(true);
+    navigator.clipboard.writeText(uids)
+      .then(() => {
+        setTimeout(() => {
+          setShowTooltipUid(false);
+        }, 500);
+      })
+      .catch(err => {
+        console.log('Cant copy password', err);
+      });
+  }
 
+  const getRandom128Bit = () => {
+    let bit = [];
+    for (let i = 0; i < 128; i++) {
+      bit.push(Math.round(Math.random()));
+    }
+    return bit;
+  }
+
+  const generateUid = () => {
+    // 8-4-4-4-12
+    // AAAA AAAA - AAAA - MAAA - NAAA- AAAA AAAA AAAA
+    // M - version, N - variable
+    let uidBinary = getRandom128Bit();
+    uidBinary[48] = 0;
+    uidBinary[49] = 1;
+    uidBinary[50] = 0;
+    uidBinary[51] = 0;
+
+    uidBinary[64] = 1;
+    uidBinary[65] = 0;
+
+    let res = "";
+    for (let i = 0; i < 128; i += 4) {
+      let bit4 = `${uidBinary[i]}${uidBinary[i + 1]}${uidBinary[i + 2]}${uidBinary[i + 3]}`
+      res += parseInt(bit4, 2).toString(16)
+      if (i === 28 || i === 44 || i === 60 || i === 76) {
+        res += "-"
+      }
+    }
+    return res;
+  }
+
+  const generateUidsClick = () => {
+    let res = '';
+    for (let i = 0; i < numberOfUids; i++) {
+      res += generateUid() + '\n';
+    }
+
+    setUids(res);
+  }
 
   return (
     <div className={classNames('app', {}, [theme])}>
@@ -171,6 +230,34 @@ function App() {
             </Button>
           </InputGroup>
         </div>
+
+        <div className="prop-wrapper">
+          <h1 className="header">UIDs generator</h1>
+          <Slider
+
+            text='bottom'
+            label="Opacity"
+            maxValue={1000}
+            minValue={1}
+            type='single'
+            value={numberOfUids}
+            step={1}
+            onChange={numberOfUidsChange}
+          />
+          <Button className='button' theme='primary' onClick={generateUidsClick}>Generate {numberOfUids} UIDs</Button>
+
+          <div className="input-wrapper">
+            {showTooltipUid && <div className="tooltip area">Copied!</div>}
+            <InputGroup className='input-group input-area'>
+              <Input area placeholder='UIDs' value={uids} />
+              <Button className='input-button' theme='outline' onClick={copyUIDClick}>
+                <CopyIcon />
+                <span className='input-button-text'>Copy</span>
+              </Button>
+            </InputGroup>
+          </div>
+        </div>
+
       </div>
 
 

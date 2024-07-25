@@ -10,15 +10,16 @@
 .toggleTheme
   margin: 0px 10px
 .wrapper
-  padding: 200px 200px
+  padding: 50px 200px
   display: flex
   justify-items: center
   align-items: center
 
 .input-wrapper
+  margin-bottom: 50px
   margin-top: 30px
   position: relative
-  width: 90%
+  width: 100%
 
 .tooltip
   position: absolute
@@ -51,6 +52,11 @@
 .prop-wrapper
   width: 50%
 
+.area
+  top: -30px
+
+.input-area
+  margin-top: 40px
 @media (max-width:1120px)
   .wrapper
     padding: 100px
@@ -80,3 +86,15 @@
     padding: 20px
   .input-wrapper
     width: 100%
+
+*::-webkit-scrollbar
+  width: 10px
+
+*::-webkit-scrollbar-track
+  background: var(--bg-quaternary)
+  border-radius: var(--radius-md)
+
+*::-webkit-scrollbar-thumb
+  background-color: var(--bg-brand-solid)
+  border-radius: var(--radius-md)
+  border: 1px solid var(--border-brand-solid)
