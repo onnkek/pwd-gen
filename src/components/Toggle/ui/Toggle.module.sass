@@ -1,9 +1,9 @@
 .toggleContainer
   --toggle-button-fg_disabled: var(--bg-disabled_subtle)
   padding: 0
-  display: grid
   color: var(--indigo-50)
   align-items: center
+  min-width: 36px
   width: 36px
   height: 20px
   background-color: var(--bg-tertiary)
@@ -13,7 +13,6 @@
   cursor: pointer
 .toggle
   margin: 0px 2px
-  justify-self: start
   display: block
   width: 16px
   height: 16px
@@ -30,14 +29,17 @@
   background-color: var(--bg-disabled)
 
 .toggleContainer[aria-checked="true"]
-  animation: color 0.2s ease-in-out
+  //animation: color 0.2s ease-in-out
+  transition: background-color 0.2s ease-in-out
   background-color: var(--bg-brand-solid)
   .toggle
-    justify-self: end
+    // justify-self: end
+    transform: translateX(1.5em)
   &:focus-visible
     box-shadow: var(--ring-brand)
 .toggleContainer[aria-checked="false"]
-  animation: colorBack 0.2s ease-in-out
+  // animation: colorBack 0.2s ease-in-out
+  transition: background-color 0.2s ease-in-out
   background-color: var(--bg-tertiary)
   &:focus-visible
     box-shadow: var(--ring-gray-secondary)
@@ -56,6 +58,7 @@
 
 .toggleContainer.l
   width: 44px
+  min-width: 44px
   height: 24px
 
   .toggle
