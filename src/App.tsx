@@ -183,7 +183,9 @@ function App() {
         <MoonIcon width={25} height={25} fill="var(--fg-brand-primary)" />
       </div>
 
-
+      <Toggle className='toggleTheme' size='M' checked={theme === 'dark'} onClick={toggleTheme} />
+      <Toggle className='toggleTheme' size='L' disabled checked={theme === 'dark'} onClick={toggleTheme} />
+      <Toggle className='toggleTheme' size='M' disabled checked={theme === 'dark'} onClick={toggleTheme} />
       <div className="wrapper">
         <div className="prop-wrapper">
           <h1 className="header">Password generator</h1>
