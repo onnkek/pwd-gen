@@ -1,9 +1,28 @@
 @import './variables.sass'
 
 .app
+  --animation-duration: 0.2s
+  --animation-timing: cubic-bezier(0.76,0.05,0.24,0.95)
+  --animation: background-color var(--animation-duration) var(--animation-timing), color var(--animation-duration) var(--animation-timing), fill var(--animation-duration) var(--animation-timing), stroke var(--animation-duration) var(--animation-timing), border-color var(--animation-duration) var(--animation-timing)
   background-color: var(--bg-primary)
   min-height: 100vh
   height: 100%
+  // transition: var(--animation)
+  // input,
+  // textarea,
+  // button,
+  // div,
+  // svg,
+  // span,
+  // output,
+  // h1,
+  // h2,
+  // h3,
+  // h4,
+  // input::placeholder,
+  // textarea::placeholder
+  //   transition: var(--animation)
+
 .theme-wrapper
   padding: 10px
   display: flex

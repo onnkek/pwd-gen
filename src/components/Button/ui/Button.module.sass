@@ -31,7 +31,6 @@
   background-color: var(--transparent)
   border: none
   font: var(--text-md-semibold)
-  transition: box-shadow 0.05s ease-in, background-color 0.2s linear
   display: flex
   justify-content: center
   align-items: center
@@ -46,6 +45,8 @@
     cursor: default
   &:focus-visible
     outline: none
+  &:hover
+    transition: box-shadow 0.05s ease-in, background-color 0.2s linear
 
 .primary
   background-color: var(--button-primary-bg)
